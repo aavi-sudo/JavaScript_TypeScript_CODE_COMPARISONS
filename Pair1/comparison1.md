@@ -17,39 +17,77 @@ This document compares two functions based on four metrics:
 | **Maintainability Index (MI)**  | ~50.8                | ~63.8                   |
 
 
+# Detailed Explanation with Calculations
 
-# Detailed Calculations
+## 1. Control Flow Graphs (CFG)
 
-## 1. Cyclomatic Complexity (CC)
+The following images represent the control flow graphs for each function:
 
-### JavaScript `calculate`:
+### JavaScript `calculate` CFG:
+![JavaScript CFG](calculate_cfg.pdf)
 
-#### Decision Points:
-- `if (typeof a !== "number" || typeof b !== "number")`
-- `if (typeof operation !== "string")`
-- `if (operation === "add")`
-- `if (operation === "subtract")`
-- `if (operation === "multiply")`
+### TypeScript `calculateTS` CFG:
+![TypeScript CFG](calculateTS_cfg.pdf)
 
-#### Calculation:
-\[
-CC = (\text{Number of decisions}) + 1 = 5 + 1 = 6
-\]
+# Cyclomatic Complexity Calculation for `calculate` and `calculateTS` Functions
 
-### TypeScript `calculateTS`:
+As mentioned in the paper the formula for cyclomatic complexity is: 
 
-#### Decision Points:
-- `if (operation === "add")`
-- `if (operation === "subtract")`
+$$
+M = E - N + 2P
+$$
 
-#### Calculation:
-\[
-CC = (\text{Number of decisions}) + 1 = 2 + 1 = 3
-\]
+where:
+- **E** is the number of edges in the control flow graph,
+- **N** is the number of nodes in the control flow graph,
+- **P** is the number of connected components.
+
+For a single connected component (i.e., \(P = 1\)), this formula simplifies to:
+
+$$
+M = E - N + 2
+$$
 
 ---
 
-## 2. Halstead Effort (E)
+## 1. JavaScript `calculate` Function
+
+### Control Flow Graph Parameters
+
+Based on our analysis of the JavaScript `calculate` function:
+- **Edges (E):** 17
+- **Nodes (N):** 13
+- **Connected Components (P):** 1
+
+### Cyclomatic Complexity Calculation
+
+$$
+M = 17 - 13 + 2 = 6
+$$
+
+Thus, the cyclomatic complexity of the JavaScript `calculate` function is **6**.
+
+---
+
+##  TypeScript `calculateTS` Function
+
+### Control Flow Graph Parameters
+
+Based on our analysis of the TypeScript `calculateTS` function:
+- **Edges (E):** 8
+- **Nodes (N):** 7
+- **Connected Components (P):** 1
+
+### Cyclomatic Complexity Calculation
+
+$$
+M = 8 - 7 + 2 = 3
+$$
+
+Thus, the cyclomatic complexity of the TypeScript `calculateTS` function is **3**.
+
+
+## 3. Halstead Effort (E)
 
 ### JavaScript `calculate`:
 
@@ -64,25 +102,15 @@ CC = (\text{Number of decisions}) + 1 = 2 + 1 = 3
 #### Calculations:
 
 **Volume (V):**  
-\[
-V = N \times \log_2(n) \approx 56 \times \log_2(25)
-\]
-\[
-\log_2(25) \approx 4.64, \quad V \approx 56 \times 4.64 \approx 260
-\]
+V = N × log₂(n) ≈ 56 × log₂(25)  
+log₂(25) ≈ 4.64, → V ≈ 56 × 4.64 ≈ 260  
 
 **Difficulty (D):**  
-\[
-D = \left(\frac{n₁}{2}\right) \times \left(\frac{N₂}{n₂}\right) \approx \left(\frac{13}{2}\right) \times \left(\frac{25}{12}\right)
-\]
-\[
-\approx 6.5 \times 2.083 \approx 13.54
-\]
+D = (n₁ / 2) × (N₂ / n₂) ≈ (13 / 2) × (25 / 12)  
+≈ 6.5 × 2.083 ≈ 13.54  
 
 **Effort (E):**  
-\[
-E = V \times D \approx 260 \times 13.54 \approx 3523
-\]
+E = V × D ≈ 260 × 13.54 ≈ 3523  
 
 ---
 
@@ -99,37 +127,26 @@ E = V \times D \approx 260 \times 13.54 \approx 3523
 #### Calculations:
 
 **Volume (V):**  
-\[
-V = N \times \log_2(n) \approx 29 \times \log_2(15)
-\]
-\[
-\log_2(15) \approx 3.91, \quad V \approx 29 \times 3.91 \approx 113.3
-\]
+V = N × log₂(n) ≈ 29 × log₂(15)  
+log₂(15) ≈ 3.91, → V ≈ 29 × 3.91 ≈ 113.3  
 
 **Difficulty (D):**  
-\[
-D = \left(\frac{n₁}{2}\right) \times \left(\frac{N₂}{n₂}\right) \approx \left(\frac{7}{2}\right) \times \left(\frac{18}{8}\right)
-\]
-\[
-\approx 3.5 \times 2.25 \approx 7.88
-\]
+D = (n₁ / 2) × (N₂ / n₂) ≈ (7 / 2) × (18 / 8)  
+≈ 3.5 × 2.25 ≈ 7.88  
 
 **Effort (E):**  
-\[
-E = V \times D \approx 113.3 \times 7.88 \approx 893
-\]
+E = V × D ≈ 113.3 × 7.88 ≈ 893  
 
----
 
 ## 3. Maintainability Index (MI)
 
-The Maintainability Index is computed using the formula:
+The Maintainability Index is computed using the **formula:**
 
-\[
-MI = \max(0, \left(171 - 5.2 \times \ln(E) - 0.23 \times CC - 16.2 \times \ln(LOC)\right) / 171) \times 100
-\]
+MI = max(0, (171 - 5.2 × ln(E) - 0.23 × CC - 16.2 × ln(LOC)) / 171) × 100
 
-### JavaScript `calculate`:
+### Maintainability Index (MI) Calculation
+
+#### JavaScript `calculate`:
 
 **Values:**
 - **CC:** 6
@@ -137,24 +154,17 @@ MI = \max(0, \left(171 - 5.2 \times \ln(E) - 0.23 \times CC - 16.2 \times \ln(LO
 - **LOC:** ≈ 12
 
 **Intermediate Calculations:**
-\[
-\ln(3523) \approx 8.17, \quad \ln(12) \approx 2.48
-\]
-\[
-MI_{\text{raw}} = 171 - (5.2 \times 8.17 + 0.23 \times 6 + 16.2 \times 2.48)
-\]
-\[
-\approx 171 - (42.48 + 1.38 + 40.26) \approx 171 - 84.12 \approx 86.88
-\]
+- ln(3523) ≈ 8.17, ln(12) ≈ 2.48  
+- MI_raw = 171 - (5.2 × 8.17 + 0.23 × 6 + 16.2 × 2.48)  
+- ≈ 171 - (42.48 + 1.38 + 40.26)  
+- ≈ 171 - 84.12 ≈ 86.88  
 
 **Final Calculation:**
-\[
-MI \approx \left(\frac{86.88}{171}\right) \times 100 \approx 50.8
-\]
+- MI ≈ (86.88 / 171) × 100 ≈ 50.8  
 
 ---
 
-### TypeScript `calculateTS`:
+#### TypeScript `calculateTS`:
 
 **Values:**
 - **CC:** 3
@@ -162,29 +172,10 @@ MI \approx \left(\frac{86.88}{171}\right) \times 100 \approx 50.8
 - **LOC:** ≈ 5
 
 **Intermediate Calculations:**
-\[
-\ln(893) \approx 6.79, \quad \ln(5) \approx 1.61
-\]
-\[
-MI_{\text{raw}} = 171 - (5.2 \times 6.79 + 0.23 \times 3 + 16.2 \times 1.61)
-\]
-\[
-\approx 171 - (35.31 + 0.69 + 26.08) \approx 171 - 62.08 \approx 108.92
-\]
+- ln(893) ≈ 6.79, ln(5) ≈ 1.61  
+- MI_raw = 171 - (5.2 × 6.79 + 0.23 × 3 + 16.2 × 1.61)  
+- ≈ 171 - (35.31 + 0.69 + 26.08)  
+- ≈ 171 - 62.08 ≈ 108.92  
 
 **Final Calculation:**
-\[
-MI \approx \left(\frac{108.92}{171}\right) \times 100 \approx 63.8
-\]
-
----
-
-## 4. Control Flow Graphs (CFG)
-
-The following images represent the control flow graphs generated for each function using Python and Graphviz:
-
-### JavaScript `calculate` CFG:
-![JavaScript CFG](calculate_cfg.pdf)
-
-### TypeScript `calculateTS` CFG:
-![TypeScript CFG](calculateTS_cfg.pdf)
+- MI ≈ (108.92 / 171) × 100 ≈ 63.8  
