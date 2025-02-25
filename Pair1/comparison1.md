@@ -184,7 +184,7 @@ MI \approx \left(\frac{108.92}{171}\right) \times 100 \approx 63.8
 The following images represent the control flow graphs generated for each function using Python and Graphviz:
 
 ### JavaScript `calculate` CFG:
-![JavaScript CFG](path/to/javascript_cfg.png)
+![JavaScript CFG](calculate_cfg.pdf)
 
 ### TypeScript `calculateTS` CFG:
 ![TypeScript CFG](calculateTS_cfg.pdf)
