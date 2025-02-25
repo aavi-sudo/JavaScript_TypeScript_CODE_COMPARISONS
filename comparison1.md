@@ -187,4 +187,4 @@ The following images represent the control flow graphs generated for each functi
 ![JavaScript CFG](path/to/javascript_cfg.png)
 
 ### TypeScript `calculateTS` CFG:
-![TypeScript CFG](path/to/typescript_cfg.png)
+![TypeScript CFG](calculateTS_cfg.pdf)
