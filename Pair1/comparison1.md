@@ -93,15 +93,15 @@ Thus, the cyclomatic complexity of the TypeScript `calculateTS` function is **3*
 ### JavaScript `calculate`:
 | **Metric**               | **Calculation**                      | **Result**       |
 |--------------------------|--------------------------------------|------------------|
-| Unique Operators (n₁)    | —                                    | 13               |
-| Total Operators (N₁)     | —                                    | 30               |
-| Unique Operands (n₂)     | —                                    | 18               |
-| Total Operands (N₂)      | —                                    | 38               |
-| **Vocabulary (n)**       | n₁ + n₂ = 13 + 18                    | 31               |
-| **Program Length (N)**   | N₁ + N₂ = 30 + 38                    | 68               |
-| **Volume (V)**           | 68 × log₂(31)                        | ~336.87 bits     |
-| **Difficulty (D)**       | (13/2) × (38/18)                     | ~13.72           |
-| **Effort (E)**           | 13.72 × 336.87                       | ~4623            |
+| **Unique Operators (n₁)**   | Unique operators in code             | 15               |
+| **Total Operators (N₁)**   | Count of all operator occurrences    | 52               |
+| **Unique Operands (n₂)**    | Unique operands in code              | 8                |
+| **Total Operands (N₂)**     | Count of all operand occurrences     | 22              |
+| **Vocabulary (n)**       | n₁ + n₂ = 15 + 8                   | 22               |
+| **Program Length (N)**   | N₁ + N₂ = 52 + 22                    | 74               |
+| **Volume (V)**           | 74 × log₂(22)                        | ~329.99 bits     |
+| **Difficulty (D)**       | (15/2) × (22/8)                     | ~20.625          |
+| **Effort (E)**           | 20.625 × 329.99                       | ~6806.04375            |
 
 
 ---
