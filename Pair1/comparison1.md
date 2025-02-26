@@ -12,7 +12,7 @@ This document compares two functions based on four metrics:
 
 | Metric                  | JavaScript `calculate` | TypeScript `calculateTS` |
 |-------------------------|----------------------|-------------------------|
-|**Lines of Code (LOC)** |                      |                          |
+|**Lines of Code (LOC)** |               12       |    5                      |
 | **Cyclomatic Complexity (CC)** | 6                    | 3                       |
 | **Halstead Effort (E)**        | ~3523                | ~893                    |
 | **Maintainability Index (MI)**  | ~50.8                | ~63.8                   |
@@ -134,17 +134,11 @@ MI = max(0, (171 - 5.2 × ln(E) - 0.23 × CC - 16.2 × ln(LOC)) / 171) × 100
 
 **Values:**
 - **CC:** 6
-- **E:** ≈ 3523
+- **E:** ≈ 329.99
 - **LOC:** ≈ 12
 
-**Intermediate Calculations:**
-- ln(3523) ≈ 8.17, ln(12) ≈ 2.48  
-- MI_raw = 171 - (5.2 × 8.17 + 0.23 × 6 + 16.2 × 2.48)  
-- ≈ 171 - (42.48 + 1.38 + 40.26)  
-- ≈ 171 - 84.12 ≈ 86.88  
+MI = $171 - 5.2 \cdot \ln(329.99) - 0.23 \cdot (6) - 16.2 \cdot \ln(12)$ ≈  99.209
 
-**Final Calculation:**
-- MI ≈ (86.88 / 171) × 100 ≈ 50.8  
 
 ---
 
@@ -152,14 +146,8 @@ MI = max(0, (171 - 5.2 × ln(E) - 0.23 × CC - 16.2 × ln(LOC)) / 171) × 100
 
 **Values:**
 - **CC:** 3
-- **E:** ≈ 893
+- **E:** ≈ 231.890
 - **LOC:** ≈ 5
 
-**Intermediate Calculations:**
-- ln(893) ≈ 6.79, ln(5) ≈ 1.61  
-- MI_raw = 171 - (5.2 × 6.79 + 0.23 × 3 + 16.2 × 1.61)  
-- ≈ 171 - (35.31 + 0.69 + 26.08)  
-- ≈ 171 - 62.08 ≈ 108.92  
+MI = $171 - 5.2 \cdot \ln(231.890) - 0.23 \cdot (3) - 16.2 \cdot \ln(5)$ ≈  115.91
 
-**Final Calculation:**
-- MI ≈ (108.92 / 171) × 100 ≈ 63.8  
