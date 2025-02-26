@@ -14,8 +14,8 @@ This document compares two functions based on four metrics:
 |-------------------------|----------------------|-------------------------|
 |**Lines of Code (LOC)** |               12       |    5                      |
 | **Cyclomatic Complexity (CC)** | 6                    | 3                       |
-| **Halstead Effort (E)**        | ~3523                | ~893                    |
-| **Maintainability Index (MI)**  | ~50.8                | ~63.8                   |
+| **Halstead Effort (E)**        | ~6806.04              | ~4223.71                  |
+| **Maintainability Index (MI)**  | ~99.02                | ~115.91                 |
 
 
 # Detailed Explanation with Calculations
