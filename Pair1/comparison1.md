@@ -108,26 +108,18 @@ Thus, the cyclomatic complexity of the TypeScript `calculateTS` function is **3*
 
 ### TypeScript `calculateTS`:
 
-#### Token Estimates:
-- **Total Operators (N₁):** ≈ 11  
-- **Total Operands (N₂):** ≈ 18  
-- **Total Tokens (N):** 29  
-- **Distinct Operators (n₁):** ≈ 7  
-- **Distinct Operands (n₂):** ≈ 8  
-- **Vocabulary (n = n₁ + n₂):** 15  
+| Metric               | Calculation                                      | Value        |
+|----------------------|--------------------------------------------------|-------------|
+| **Total Operators (N₁)**   | Count of all operator occurrences            | ≈ 35        |
+| **Total Operands (N₂)**    | Count of all operand occurrences             | ≈ 17        |
+| **Total Tokens (N)**       | N = N₁ + N₂                                  | 52          |
+| **Distinct Operators (n₁)** | Unique operators in code                     | ≈ 15        |
+| **Distinct Operands (n₂)**  | Unique operands in code                      | ≈ 7         |
+| **Vocabulary (n = n₁ + n₂)** | Sum of distinct operators & operands        | 22         |
+| **Volume (V)**             | V = N × log₂(n) = 52 × log₂(22)               | ≈ 231.890   |
+| **Difficulty (D)**         | D = (n₁ / 2) × (N₂ / n₂) = (15/2) × (17/7)   | ≈ 18.2142   |
+| **Effort (E)**             | E = V × D = 231.890 × 18.21                   | ≈ 4223.7107 |
 
-#### Calculations:
-
-**Volume (V):**  
-V = N × log₂(n) ≈ 29 × log₂(15)  
-log₂(15) ≈ 3.91, → V ≈ 29 × 3.91 ≈ 113.3  
-
-**Difficulty (D):**  
-D = (n₁ / 2) × (N₂ / n₂) ≈ (7 / 2) × (18 / 8)  
-≈ 3.5 × 2.25 ≈ 7.88  
-
-**Effort (E):**  
-E = V × D ≈ 113.3 × 7.88 ≈ 893  
 
 
 ## 3. Maintainability Index (MI)
