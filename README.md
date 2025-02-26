@@ -32,16 +32,6 @@ The repository also contains **two images of Control Flow Graphs (CFGs)** for bo
 
 ---
 
-## Further Comparison
-
-For an in-depth analysis of these implementations, please refer to the **detailed comparison file** in this repository. It includes:
-- **Metric comparisons (LOC, CC, MI, Halstead Metrics)**
-- **Control Flow Graph (CFG) images** showcasing structural differences
-
-By examining these aspects, we highlight how TypeScript enhances robustness and maintainability over JavaScript.
-
----
-
 ## Conclusion
 
 This repository demonstrates how TypeScript’s static type checking results in safer, more maintainable code compared to JavaScript’s runtime type checks. The additional comparison file provides deeper insights into these differences using measurable software metrics and CFG visualizations.
