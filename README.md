@@ -17,7 +17,7 @@ The repository also contains **two images of Control Flow Graphs (CFGs)** for bo
 ## JavaScript Implementation (JS1.js)
 
 **Key Points:**
-- **Errors occur at runtime** if incorrect input types are used.
+- **Errors occur at runtime** if incorrect input types are used (handled for some cases, to stop the program from crashing).
 - **Manual type checks** are needed for input validation.
 - **Unsupported operations (e.g., division)** could cause unexpected behavior.
 
