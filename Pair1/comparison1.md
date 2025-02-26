@@ -91,27 +91,18 @@ Thus, the cyclomatic complexity of the TypeScript `calculateTS` function is **3*
 ## 3. Halstead Effort (E)
 
 ### JavaScript `calculate`:
+| **Metric**               | **Calculation**                      | **Result**       |
+|--------------------------|--------------------------------------|------------------|
+| Unique Operators (n₁)    | —                                    | 13               |
+| Total Operators (N₁)     | —                                    | 30               |
+| Unique Operands (n₂)     | —                                    | 18               |
+| Total Operands (N₂)      | —                                    | 38               |
+| **Vocabulary (n)**       | n₁ + n₂ = 13 + 18                    | 31               |
+| **Program Length (N)**   | N₁ + N₂ = 30 + 38                    | 68               |
+| **Volume (V)**           | 68 × log₂(31)                        | ~336.87 bits     |
+| **Difficulty (D)**       | (13/2) × (38/18)                     | ~13.72           |
+| **Effort (E)**           | 13.72 × 336.87                       | ~4623            |
 
-#### Token Estimates:
-- **Total Operators (N₁):** ≈ 31  
-- **Total Operands (N₂):** ≈ 25  
-- **Total Tokens (N):** 56  
-- **Distinct Operators (n₁):** ≈ 13  
-- **Distinct Operands (n₂):** ≈ 12  
-- **Vocabulary (n = n₁ + n₂):** 25  
-
-#### Calculations:
-
-**Volume (V):**  
-V = N × log₂(n) ≈ 56 × log₂(25)  
-log₂(25) ≈ 4.64, → V ≈ 56 × 4.64 ≈ 260  
-
-**Difficulty (D):**  
-D = (n₁ / 2) × (N₂ / n₂) ≈ (13 / 2) × (25 / 12)  
-≈ 6.5 × 2.083 ≈ 13.54  
-
-**Effort (E):**  
-E = V × D ≈ 260 × 13.54 ≈ 3523  
 
 ---
 
